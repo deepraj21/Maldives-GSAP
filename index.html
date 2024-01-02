@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css"
+        integrity="sha512-/VYneElp5u4puMaIp/4ibGxlTd2MV3kuUIroR3NSQjS2h9XKQNebRQiyyoQKeiGE9mRdjSCIZf9pb7AVJ8DhCg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Maldives</title>
+
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="bg" style="background: url('images/1.jpg') no-repeat; background-size: cover; ">
+                        </div>
+                        <div class="text">
+                            <h2>WATER OF <br> MALDIVES</h2>
+                            <p>
+                                <span>01</span>
+                                <b>Explore The Land</b>
+                                <br>
+                                The Residence Maldives at Falhumaafushi lies on an unspoilt island in
+                                Gaafu Alifu Atoll, part of one of the largest and deepest atolls in the
+                                Maldives, Huvadhoo. The 94 beach front and overwater villa resort is
+                                an intimate retreat just 45 miles north of the Equator, renowned for its
+                                unrivalled diving.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg"  style="background: url('images/2.jpg') no-repeat; background-size: cover; ">
+                        </div>
+                        <div class="text">
+                            <h2>WATER OF <br> MALDIVES</h2>
+                            <p>
+                                <span>02</span>
+                                <b>Explore The water</b>
+                                <br>
+                                The Residence Maldives at Falhumaafushi lies on an unspoilt island in
+                                Gaafu Alifu Atoll, part of one of the largest and deepest atolls in the
+                                Maldives, Huvadhoo. The 94 beach front and overwater villa resort is
+                                an intimate retreat just 45 miles north of the Equator, renowned for its
+                                unrivalled diving.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg"  style="background: url('images/3.jpg') no-repeat; background-size: cover; ">
+                        </div>
+                        <div class="text">
+                            <h2>WATER OF <br> MALDIVES</h2>
+                            <p>
+                                <span>03</span>
+                                <b>Explore The Land</b>
+                                <br>
+                                The Residence Maldives at Falhumaafushi lies on an unspoilt island in
+                                Gaafu Alifu Atoll, part of one of the largest and deepest atolls in the
+                                Maldives, Huvadhoo. The 94 beach front and overwater villa resort is
+                                an intimate retreat just 45 miles north of the Equator, renowned for its
+                                unrivalled diving.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="scroll">
+            <span>SCROLL DOWN</span>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="ripple.js"></script>
+    <script>
+
+        gsap.from(".bg", {
+            opacity: 0,
+            duration: 2
+        })
+        gsap.to(".text h2", {
+            y: 0,
+            duration: 0.9,
+            opacity: 1,
+            delay: 0.5
+        })
+        gsap.to(".text p", {
+            y: 0,
+            duration: 0.9,
+            opacity: 1,
+            delay: 0.5
+        })
+
+        $(".swiper-slide .bg").ripples({
+            resolution: 1080,
+            perturbance: 0.02,
+            interactive: true
+        });
+
+        var swiper = new Swiper(".swiper", {
+            direction: "horizontal",
+            mousewheel: true,
+            speed: 1200,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '"> 0' + (index + 1) + "</span>";
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            effect: "creative",
+            creativeEffect: {
+                prev: {
+                    shadow: true,
+                    translate: [0, 0, -400],
+                },
+                next: {
+                    translate: ["100%", 0, 0],
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>
